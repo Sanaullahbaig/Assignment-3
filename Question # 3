@@ -1,0 +1,35 @@
+Binary Search is a search algorithm that efficiently finds the position of a target value within a sorted collection. In the context of a sorted list of student exam scores, Binary Search can be applied to identify the position of a particular score as follows:
+
+1. Initial Setup:
+   - Ensure that the list of student exam scores is sorted in ascending or descending order. Binary Search works on the assumption that the data is sorted.
+   - Determine the target score for which you want to find the position.
+
+2. Algorithm Steps:
+   - Compare the target score with the middle element of the list.
+   - If the target score is equal to the middle element, you have found the position.
+   - If the target score is less than the middle element, repeat the search on the lower half of the list.
+   - If the target score is greater than the middle element, repeat the search on the upper half of the list.
+   - Continue these steps until the target score is found or the search range becomes empty.
+
+3.Identification of Position:
+   - If the target score is found, the position in the sorted list is known.
+   - If the target score is not found, the algorithm will determine the position where the score should be inserted to maintain the sorted order.
+
+4. Time Complexity:
+   - Binary Search has a time complexity of O(log n), making it more efficient than linear search algorithms, especially for large datasets.
+
+Assumptions and Requirements for Binary Search:
+
+1. Sorted Data:
+   - Binary Search assumes that the input data is sorted. If the list is not sorted, Binary Search will not yield correct results.
+
+2. Random Access Memory (RAM):
+   - Binary Search requires random access to elements in the list. This means that the algorithm should be able to directly access any element in the list without having to traverse through the entire list. Arrays, which provide constant-time random access, are suitable for Binary Search.
+
+3. Applicability of Comparison:
+   - The elements in the list must be comparable. Binary Search relies on comparing elements to determine whether the target is greater, less than, or equal to the middle element.
+
+4. No Duplicates (for exact search):
+   - If there are duplicate values in the list, Binary Search might not always return the first occurrence of the target value. Modifications may be needed to handle this scenario if the exact position of duplicates is crucial.
+
+In summary, Binary Search is a powerful algorithm for efficiently identifying the position of a particular score in a sorted list of student exam scores. The key requirements include sorted data, random access to elements, comparability of elements, and consideration for duplicate values if they exist.
