@@ -1,0 +1,25 @@
+A hash table can be used to store user credentials securely by employing a technique called password hashing. Password hashing is a process that transforms user passwords into a fixed-size string of characters, which is then stored in the hash table. The idea is that even if the hash table is compromised, an attacker should find it extremely difficult to reverse the process and obtain the original passwords.
+
+Here's how a hash table can store user credentials securely:
+
+1. Hash Functions:
+   - A hash function takes input data (in this case, a user's password) and produces a fixed-size string of characters, which is typically a hash value.
+   - The hash function should be deterministic, meaning the same input will always produce the same output, and it should be computationally efficient to calculate.
+
+2. Password Hashing:
+   - Instead of storing user passwords directly in the hash table, the system stores the hash values generated from applying a hash function to the passwords.
+   - When a user attempts to log in, the system hashes the entered password using the same hash function and compares it to the stored hash value.
+
+3. Salting:
+   - To enhance security, a unique random value called a "salt" is generated for each user. The salt is then combined with the user's password before hashing.
+   - This ensures that even if two users have the same password, their hash values will be different due to the unique salts.
+
+4. Importance of Collision Resistance:
+   - Collision resistance is a crucial property of hash functions in this context. A hash function is considered collision-resistant if it is computationally infeasible to find two different inputs that produce the same hash output.
+   - In the context of password hashing, a collision would mean two different passwords hash to the same value. This is undesirable because an attacker could use this collision to gain unauthorized access.
+   - If a hash function is collision-resistant, it becomes significantly more challenging for an attacker to guess or find a password that produces a particular hash value.
+
+5. Iterative Hashing (Key Strengthening):
+   - To further enhance security, multiple iterations of the hash function can be applied to the password. This process, known as key strengthening, increases the computational effort required to crack passwords using techniques like brute force or dictionary attacks.
+
+In summary, using a hash table to store user credentials involves the secure hashing of passwords with appropriate considerations for salting, collision resistance, and key strengthening. These measures collectively contribute to a more robust and secure user authentication system, protecting user passwords even in the event of a data breach.
